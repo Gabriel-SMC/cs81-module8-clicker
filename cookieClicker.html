@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #cookie-btn {
+            font-size: 80px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+        #cookie-btn:active {
+            transform: scale(0.9);
+        }
+        .stats {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        #message {
+            font-size: 18px;
+            color: #555;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Cookie Clicker</h1>
+
+    <button id="cookie-btn">🍪</button>
+
+    <div class="stats">
+        Cookies: <span id="cookie-count">0</span>
+    </div>
+
+    <div id="message">Click the cookie to start baking!</div>
+
+</body>
+</html>
