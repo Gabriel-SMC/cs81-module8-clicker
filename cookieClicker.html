@@ -3,70 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cookie Clicker</title>
+    <title>Space Clicker</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
             margin-top: 50px;
+            transition: background-color 0.8s ease; 
+            background-color: #0f172a;
+            color: #ffffff;
         }
-        #cookie-btn {
-            font-size: 80px;
+
+        #click-btn {
+            font-size: 90px;
             background: none;
             border: none;
             cursor: pointer;
             transition: transform 0.1s;
         }
-        #cookie-btn:active {
-            transform: scale(0.9);
+
+        #click-btn:active {
+            transform: scale(0.85);
         }
+
         .stats {
-            font-size: 24px;
+            font-size: 28px;
             margin: 20px 0;
+            font-weight: bold;
         }
+
         #message {
-            font-size: 18px;
-            color: #555;
+            font-size: 20px;
+            color: #cbd5e1;
             font-style: italic;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #94a3b8;
         }
     </style>
 </head>
 <body>
 
-    <h1>Cookie Clicker</h1>
+    <h1>🚀 Space Clicker 🚀</h1>
+    <p>Launch rockets into deep space!</p>
 
-    <button id="cookie-btn">🍪</button>
+    <button id="click-btn">🚀</button>
 
     <div class="stats">
-        Cookies: <span id="cookie-count">0</span>
+        Rockets Launched: <span id="counter">0</span>
     </div>
 
-    <div id="message">Click the cookie to start baking!</div>
+    <div id="message">Click the rocket to initiate launch!</div>
 
     <script>
-        const cookieButton = document.getElementById("cookie-btn");
-        const cookieCountDisplay = document.getElementById("cookie-count");
+        const clickBtn = document.getElementById("click-btn");
+        const counterDisplay = document.getElementById("counter");
         const messageDisplay = document.getElementById("message");
 
         let count = 0;
 
-        cookieButton.addEventListener("click", function() {
+        clickBtn.addEventListener("click", function() {
             count++;
-            cookieCountDisplay.textContent = count;
-            if (count === 1) {
-                messageDisplay.textContent = "First cookie baked!";
-            } else if (count === 10) {
-                messageDisplay.textContent = "You're just getting started!";
+            counterDisplay.textContent = count;
+
+            if (count === 10) {
+                document.body.style.backgroundColor = "#1e1b4b";
+                messageDisplay.textContent = "🌌 Milestone: You reached Low Earth Orbit!";
             } else if (count === 25) {
-                messageDisplay.textContent = "Wow, that's a lot of cookies!";
+                document.body.style.backgroundColor = "#48494b";
+                messageDisplay.textContent = "⚪️ Milestone: Moon base established!";
             } else if (count === 50) {
-                messageDisplay.textContent = "Are you still clicking?";
+                document.body.style.backgroundColor = "#450a0a";
+                messageDisplay.textContent = "🔴 Milestone: Touchdown on Mars!";
             } else if (count === 100) {
-                messageDisplay.textContent = "You win! Maybe take a break!";
+                document.body.style.backgroundColor = "#d2b48c";
+                messageDisplay.textContent = "🟠 Milestone: Passing Jupiter!";
             } else if (count === 150) {
-                messageDisplay.textContent = "Aiming high now!";
+                document.body.style.backgroundColor ="#2e5d9d";
+                messageDisplay.textContent = "🔵 Milestone: Now arriving at Neptune!";
             } else if (count === 200) {
-                messageDisplay.textContent = "Your wrist must be durable to last this long!"
+                document.body.style.backgroundColor = "#d2b55b";
+                messageDisplay.textContent = "✨ To infinity and beyond!"
             }
         });
     </script>
